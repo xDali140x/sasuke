@@ -131,7 +131,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69763249}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f1e58540699cf7f4dabe482675f31133, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -586,7 +586,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743267081}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f1e58540699cf7f4dabe482675f31133, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -637,6 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 907292808}
+  - component: {fileID: 907292814}
   - component: {fileID: 907292811}
   - component: {fileID: 907292813}
   - component: {fileID: 907292812}
@@ -707,8 +708,8 @@ Rigidbody:
   m_GameObject: {fileID: 907292807}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.6
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -737,6 +738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076ff7464166232439ea59ad8f8b95c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 1.8
+  acceleration: 8
+  yawSmoothing: 0.08
+  yawDeadzone: 1.5
 --- !u!136 &907292813
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -744,7 +749,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907292807}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4e841babfd1d2f2429fe003995e1db08, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -760,6 +765,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &907292814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907292807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2c4e29b627d6b41b6a55faad560b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 959308593}
+  moveActionName: Move
+  maxSpeed: 1
+  acceleration: 0
+  turnToHeadSpeed: 1
 --- !u!1 &955127915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,8 +1025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackingType: 0
-  m_UpdateType: 2
+  m_TrackingType: 1
+  m_UpdateType: 1
   m_IgnoreTrackingState: 0
   m_PositionInput:
     m_UseReference: 0
@@ -1439,7 +1461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 723926960, guid: 15fcd94adb15b48f7bb4a80622ae7046, type: 3}
       propertyPath: ReticleInteractionLayerMask.m_Bits
-      value: 384
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 723926960, guid: 15fcd94adb15b48f7bb4a80622ae7046, type: 3}
       propertyPath: RecticleInteractionLayerMask.m_Bits
